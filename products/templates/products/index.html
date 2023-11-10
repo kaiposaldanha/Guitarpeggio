@@ -54,16 +54,22 @@
       </div>
 </header>
 <body>
-    <h1>Highlights</h1>
+    <h1 style="text-align: center;">Highlights</h1>
 
-    <ul class="list-group">
+    <div class="container text-center">
+      <div class="row align-items-start">
         {% for product in products %}
-            <li class="list-group-item">Instruments: {{product.id}}: {{product.name}}, {{product.type}}, {{product.price}}, 
+          {% if forloop.counter <= 3 %}
+            <div class="col">
+              <li class="list-group-item">Instruments: {{ product.id }}: {{ product.name }}, {{ product.type }}, {{ product.price }}, 
                 <img src="{{ product.imagem.url }}" alt="{{ product.nome }}" style="width: 200px; height: auto;">
-
-            </li>
+              </li>
+            </div>
+          {% endif %}
         {% endfor %}
-    </ul>
+      </div>
+    </div>
+    
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

@@ -4,12 +4,12 @@
 
 {% block content %}
 
-<h1>Seu Carrinho de Compras</h1>
+<h1>Your cart</h1>
 
 <ul>
     {% for item in cart %}
         <li>
-            {{ item.product.name }} - Quantidade: {{ item.quantity }}
+            {{ item.product.name }} - Quantity: {{ item.quantity }}
             <form action="{% url 'remove_from_cart' item.id %}" method="post">
                 {% csrf_token %}
                 <button type="submit">Remover</button>
