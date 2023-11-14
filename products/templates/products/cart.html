@@ -12,7 +12,7 @@
             {{ item.product.name }} - Quantity: {{ item.quantity }}
             <form action="{% url 'remove_from_cart' item.id %}" method="post">
                 {% csrf_token %}
-                <button type="submit">Remover</button>
+                <button type="submit">Remove</button>
             </form>
         </li>
     {% endfor %}
